@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx	    = 5;	/* gaps size between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -81,7 +81,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,             		XK_c,      killclient,     {0} },
+	{ MODKEY,             		XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -93,8 +93,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY|ShiftMask,		XK_l,      shiftview,      {.i = +1 } },
-	{ MODKEY|ShiftMask,		XK_h,      shiftview,      {.i = -1 } },
+	{ MODKEY,			XK_Right,  shiftview,      {.i = +1 } },
+	{ MODKEY,			XK_Left,   shiftview,      {.i = -1 } },
 	{ MODKEY,                       XK_F11, spawn, 		   {.v = downvol } },
 	{ MODKEY,                       XK_F9,  spawn, 		   {.v = mutevol } },
 	{ MODKEY,                       XK_F12, spawn, 		   {.v = upvol   } },
@@ -107,7 +107,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY,             		XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,            	XK_q,      quit,           {0} },
 };
 
 /* button definitions */
